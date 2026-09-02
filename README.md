@@ -54,6 +54,8 @@ As far as we know, **iphonebridge is the first free, open-source, Mac-free iMess
 | **System packages** | `bluez`, `bluez-obexd`, `python3-dbus`, `python3-gi` (+ `ofono` for calls, `wl-clipboard` for code auto-copy) | — |
 
 > ⚠️ **Adapter chipset matters for ANCS.** Per-app notifications need a real BLE bond with the iPhone. Intel adapters do this reliably. **Realtek adapters and every USB Bluetooth dongle tested so far do *not*** — their firmware negotiates legacy keys that block the cross-transport key derivation iOS needs. SMS/iMessage/contacts (MAP/PBAP) work on any adapter; only ANCS is picky. See [bmh129/ancs4linux's hardware notes](https://github.com/bmh129/ancs4linux).
+>
+> One further report: the Broadcom controller built into Apple Silicon Macs also forms the bond, on a MacBook Pro 13-inch M1 (2020) running Asahi Linux with BlueZ 5.87.
 
 ## 🚀 Installation
 
@@ -66,6 +68,16 @@ sudo apt install gir1.2-gtk-4.0 gir1.2-adw-1
 # For auto-copying verification codes (Wayland):
 sudo apt install wl-clipboard
 ```
+
+On Arch the daemon's packages are named differently, and obexd is a user unit
+that is not enabled by default:
+
+```bash
+sudo pacman -S bluez bluez-obex python-dbus python-gobject wl-clipboard
+systemctl --user enable --now obex.service
+```
+
+`ofono` (calls only) is not in the official Arch repositories.
 
 ### 2 · Clone & install
 
