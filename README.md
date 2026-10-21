@@ -1,3 +1,15 @@
+> [!IMPORTANT]
+> ## This repository is archived
+>
+> iphonebridge is no longer maintained and is kept here for historical reference only.
+>
+> **Development continues in [BlueFerry](https://github.com/erikwb/blueferry) by Erik Bourget.** BlueFerry began from this codebase and has grown well beyond it: native packages for Debian/Ubuntu, Fedora and Arch, GTK, KDE and terminal clients, RCS and group-chat support, encrypted local history, and active releases. If you want iMessage and SMS on your Linux desktop over Bluetooth, use BlueFerry.
+>
+> - Project site: <https://blueferry.weirdware.io>
+> - Source and releases: <https://github.com/erikwb/blueferry>
+>
+> The final iphonebridge release was [v0.4.2](https://github.com/gabrielmeir53/iphonebridge/releases/tag/v0.4.2) (May 2026). Issues and pull requests here are closed. Please file them against BlueFerry instead.
+
 <div align="center">
 
 # 📱 iphonebridge
